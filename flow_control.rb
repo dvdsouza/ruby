@@ -1,10 +1,11 @@
-print "what's your number?"
-number = gets.chomp.to_i
+print "enter with a phrase!"
+user_input = gets.chomp
+user_input.downcase!
 
-if number > 0
-    print "number > 0"
-elsif number == 0
-    print "number = 0"
+if user_input.include? "s"
+    user_input.gsub!(/s/, "th")
 else
-    print "number < 0"
+    print "there is no s to be replaced"
 end
+
+puts "Your new string is #{user_input}."
