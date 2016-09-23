@@ -1,11 +1,11 @@
-print "enter with a phrase!"
-user_input = gets.chomp
-user_input.downcase!
+lunch_order = {
+  "Ryan" => "wonton soup",
+  "Eric" => "hamburger",
+  "Jimmy" => "sandwich",
+  "Sasha" => "salad",
+  "Cole" => "taco"
+}
 
-if user_input.include? "s"
-    user_input.gsub!(/s/, "th")
-else
-    print "there is no s to be replaced"
+lunch_order.each do |key, value|
+    puts value
 end
-
-puts "Your new string is #{user_input}."
