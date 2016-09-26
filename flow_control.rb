@@ -1,11 +1,20 @@
-lunch_order = {
-  "Ryan" => "wonton soup",
-  "Eric" => "hamburger",
-  "Jimmy" => "sandwich",
-  "Sasha" => "salad",
-  "Cole" => "taco"
-}
+puts "What's the phrase?"
+text = gets.chomp
 
-lunch_order.each do |key, value|
-    puts value
+words = text.split(" ")
+
+frequencies = Hash.new(0)
+
+words.each do |word|
+    frequencies[word] += 1
+end
+
+frequencies = frequencies.sort_by do |word, count|
+    count
+end
+
+frequencies.reverse!
+
+frequencies.each do |word, count|
+    puts word + " " + count.to_s
 end
